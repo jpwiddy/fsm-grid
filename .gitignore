@@ -115,7 +115,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # Project Specific
-dist
 demo/dist
 demo/vendor
 demo/main.bundle.*.js

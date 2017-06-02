@@ -1,12 +1,12 @@
 import { writeFileSync, readFileSync } from 'fs';
 
-let resizable = readFileSync('lib/fsm-grid.component.ts').toString();
-writeFileSync('lib/fsm-grid.component.ts.bak', resizable);
+let file = readFileSync('lib/fsm-grid.component.ts').toString();
+writeFileSync('lib/fsm-grid.component.ts.bak', file);
 
 const styles = readFileSync('lib/fsm-grid.component.css');
-resizable = resizable.replace(/styleUrls:\s*\[.*fsm-grid.component.css.*\]/, `styles: [\`${styles}\`]`);
+file = file.replace(/styleUrls:\s*\[.*fsm-grid.component.css.*\]/, `styles: [\`${styles}\`]`);
 
 const template = readFileSync('lib/fsm-grid.component.html');
-resizable = resizable.replace(/templateUrl:\s*.fsm-grid.component.html[^,]*/, `template: \`${template}\``);
+file = file.replace(/templateUrl:\s*.fsm-grid.component.html[^,]*/, `template: \`${template}\``);
 
-writeFileSync('lib/fsm-grid.component.ts', resizable);
+writeFileSync('lib/fsm-grid.component.ts', file);
