@@ -7,7 +7,7 @@
   "module": "fsm-grid.module.js",
   "types": "fsm-grid.module.d.ts",
   "scripts": {
-    "build": "rimraf dist && ts-node utility/inline-styles.ts && tsc -p tsconfig-esm.json && rollup -c rollup.config.js dist/fsm-grid.module.js > dist/fsm-grid.bundle.js && cp package.json dist && ts-node utility/cleanup.ts && ngc && cp README.md dist",
+    "build": "rimraf dist && ts-node utility/inline.ts && tsc -p tsconfig-esm.json && rollup -c rollup.config.js dist/fsm-grid.module.js > dist/fsm-grid.bundle.js && cp package.json dist && ts-node utility/cleanup.ts && ngc && cp README.md dist",
     "postbuild": "mv lib/fsm-grid.component.ts.bak lib/fsm-grid.component.ts",
     "build:demo": "rimraf demo/dist && tsc -p tsconfig-demo.json",
     "lint": "tslint -c tslint.json lib/**/*.ts"

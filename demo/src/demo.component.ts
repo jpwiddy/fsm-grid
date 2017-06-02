@@ -7,17 +7,24 @@ import { Component } from '@angular/core';
     <div>
         <h1>FSM Grid</h1>
         <br>
-        <fsm-grid></fsm-grid>
+        <fsm-grid [headerClass]="headerClass"></fsm-grid>
         <br>
         <button (click)="toggleColor()">Toggle Grid Header Color</button>
     </div>
   `
 })
 export class DemoComponent {
-    constructor() { }
+    private step: number;
+    private headerClass: string;
+    private classes: Array<string>;
+
+    constructor() {
+        this.step = 0;
+        this.classes = ['default', 'success', 'failure']
+    }
 
     toggleColor() {
-        console.info('did toggle');
+        this.headerClass = this.classes[++this.step % 3];
     }
 }
 
