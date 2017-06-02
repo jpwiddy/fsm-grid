@@ -1,0 +1,55 @@
+{
+  "name": "fsm-grid",
+  "version": "1.0.0",
+  "description": "Simple example grid component for Angular (2 and beyond).",
+  "main": "fsm-grid.bundle.js",
+  "jsnext:main": "fsm-grid.module.js",
+  "module": "fsm-grid.module.js",
+  "types": "fsm-grid.module.d.ts",
+  "scripts": {
+    "build": "rimraf dist && ts-node utility/inline-styles.ts && tsc -p tsconfig-esm.json && rollup -c rollup.config.js dist/fsm-grid.module.js > dist/fsm-grid.bundle.js && cp package.json dist && ts-node utility/cleanup.ts && ngc && cp README.md dist",
+    "postbuild": "mv lib/fsm-grid.component.ts.bak lib/fsm-grid.component.ts",
+    "build:demo": "rimraf demo/dist && tsc -p tsconfig-demo.json",
+    "lint": "tslint -c tslint.json lib/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpwiddy/fsm-grid.git"
+  },
+  "keywords": [
+    "angular",
+    "grid"
+  ],
+  "author": "Jake Widmer <jake.widmer@ifsworld.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpwiddy/fsm-grid/issues"
+  },
+  "homepage": "https://github.com/jpwiddy/fsm-grid#readme",
+  "peerDependencies": {
+    "@angular/core": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/compiler-cli": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@types/node": "^7.0.0",
+    "core-js": "^2.4.1",
+    "rimraf": "^2.5.4",
+    "rollup": "^0.41.4",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rxjs": "^5.3.0",
+    "systemjs": "0.19.28",
+    "ts-helpers": "^1.1.2",
+    "ts-node": "^2.0.0",
+    "tslib": "^1.5.0",
+    "tslint": "^4.3.1",
+    "typescript": "^2.1.5",
+    "uglifyjs": "^2.4.10",
+    "zone.js": "^0.8.4"
+  }
+}
